@@ -43,10 +43,10 @@ public class Vector2d {
         return new Vector2d(this.x - other.x, this.y - other.y);
     }
 
-    public boolean equals(Object other){
+    public boolean equals(Object other) {
         if (this == other)
             return true;
-        if (!(other instanceof Vector2d))
+        if (!(other instanceof Vector2d)) // metoda get class - dokladnie ta klasa, instanceof zwraca prawde takze w przypadku klas potomnych
             return false;
         Vector2d that = (Vector2d) other;
         return (this.x == that.x && this.y == that.y);
