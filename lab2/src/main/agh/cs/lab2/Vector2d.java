@@ -46,7 +46,7 @@ public class Vector2d {
     public boolean equals(Object other) {
         if (this == other)
             return true;
-        if (!(other instanceof Vector2d)) // metoda get class - dokladnie ta klasa, instanceof zwraca prawde takze w przypadku klas potomnych
+        if (!(other instanceof Vector2d)) //  get class method instead of instanceof
             return false;
         Vector2d that = (Vector2d) other;
         return (this.x == that.x && this.y == that.y);

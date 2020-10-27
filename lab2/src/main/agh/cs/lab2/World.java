@@ -8,12 +8,22 @@ public class World {
         Animal cat = new Animal();
 
         //OptionsParser parser = new OptionsParser();
-        String[] testArray = new String[]{"b", "l", "forward", "r", "backward", "b", "b"};
+        String[] testArray = new String[]{"f", "f", "f", "r", "f", "f", "f", "r", "b", "r", "b", "f", "f", "f", "f", "f", "f", "r", "b", "b", "b", "b", "b"};
 
         for (MoveDirection direction : new OptionsParser().parse(testArray)) {
             cat.move(direction);
             System.out.println(cat);
         }
+
+        Math.abs();
+
+
+
     }
+
+
+
+
 }
+
 
