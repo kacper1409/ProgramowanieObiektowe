@@ -32,7 +32,14 @@ public class Animal {
 
 
     public String toString() {
-        return "orient: " + orientation + ", pos: x: " + position.x + ", y: " + position.y;
+        //return "orient: " + orientation + ", pos: x: " + position.x + ", y: " + position.y;
+        switch (orientation) {
+            case NORTH: return "N";
+            case SOUTH: return "S";
+            case EAST: return "E";
+            case WEST: return "W";
+        }
+        return null;
     }
 
     boolean inField(Vector2d currentPosition) {     // map from (0, 0) to (4, 4)
@@ -47,7 +54,7 @@ public class Animal {
         return true;
     }
 
-    public void move(MoveDirection direction) {
+    public void move(MoveDirection direction) { // ultimately implements canMoveTo method from IWorldMap interface
         if (direction == MoveDirection.RIGHT) {
             orientation = orientation.next();
         }
@@ -56,12 +63,16 @@ public class Animal {
             orientation = orientation.previous();
         }
 
-        else if (direction == MoveDirection.FORWARD && inField(position.add(orientation.toUnitVector()))) {
+        else if (direction == MoveDirection.FORWARD && map.canMoveTo(position.add(orientation.toUnitVector()))) {     // inField(position.add(orientation.toUnitVector()))) {
             position = position.add(orientation.toUnitVector());
         }
 
-        else if (direction == MoveDirection.BACKWARD && inField(position.add(orientation.toUnitVector().opposite()))) {
+        else if (direction == MoveDirection.BACKWARD && map.canMoveTo(position.add(orientation.toUnitVector().opposite()))) {   // inField(position.add(orientation.toUnitVector().opposite())))
             position = position.add(orientation.toUnitVector().opposite());
         }
+    }
+
+    public Vector2d getPosition() {
+        return position;
     }
 }
