@@ -4,12 +4,12 @@ import java.util.Vector;
 
 public class Animal {
 
-    public IWorldMap map;
-    public Vector2d initialPosition;
+    public IWorldMap map;   // czy na pewno public
+    public Vector2d initialPosition;    // początkowe położenie nam nie będzie potrzebne
     public MapDirection orientation;
     public Vector2d position;
 
-    static final int MIN_X = 0;
+    static final int MIN_X = 0; // to chyba już nie jest potrzebne
     static final int MAX_X = 4;
     static final int MIN_Y = 0;
     static final int MAX_Y = 4;
@@ -21,7 +21,7 @@ public class Animal {
         this.position = initialPosition;
     }
 
-    public Animal (IWorldMap map, Vector2d initialPosition) {
+    public Animal (IWorldMap map, Vector2d initialPosition) {   // DRY
         this.map = map;
         this.initialPosition = initialPosition;
         this.orientation = MapDirection.NORTH;
@@ -64,7 +64,7 @@ public class Animal {
         }
 
         else if (direction == MoveDirection.FORWARD && map.canMoveTo(position.add(orientation.toUnitVector()))) {     // inField(position.add(orientation.toUnitVector()))) {
-            position = position.add(orientation.toUnitVector());
+            position = position.add(orientation.toUnitVector());    // powtórzone obliczenie
         }
 
         else if (direction == MoveDirection.BACKWARD && map.canMoveTo(position.add(orientation.toUnitVector().opposite()))) {   // inField(position.add(orientation.toUnitVector().opposite())))

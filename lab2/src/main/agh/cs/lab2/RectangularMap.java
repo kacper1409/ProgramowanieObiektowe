@@ -5,7 +5,7 @@ import java.util.List;
 
 public class RectangularMap implements IWorldMap {
 
-    public int width;
+    public int width;   // public?
     public int height;
     public List<Animal> animalList;
 
@@ -16,13 +16,13 @@ public class RectangularMap implements IWorldMap {
     }
 
     public String toString() {
-        return new MapVisualizer(this).draw(new Vector2d(0, 0), new Vector2d(width, height));
+        return new MapVisualizer(this).draw(new Vector2d(0, 0), new Vector2d(width, height));   // nowy visualizer i nowe wektory co wywołanie
     }
 
     @Override
     public boolean canMoveTo(Vector2d position) {
         if (
-            position.x <= width &&
+            position.x <= width &&  // nie lepiej operować na poziomie wektorów?
             position.x >= 0 &&
             position.y <= width &&
             position.y >= 0 &&
@@ -34,7 +34,7 @@ public class RectangularMap implements IWorldMap {
 
     @Override
     public boolean place(Animal animal) {
-        if (!isOccupied(animal.position)) {
+        if (!isOccupied(animal.position)) { // czy isOccupied to właściwy wybór?
             animalList.add(animal);
             return true;
         }
@@ -56,7 +56,7 @@ public class RectangularMap implements IWorldMap {
     }
 
     @Override
-    public Object objectAt(Vector2d position) {
+    public Object objectAt(Vector2d position) { // uderzająco podobna do metody powyżej
         for (Animal animal : animalList) {
                 if (position.equals(animal.position)) return animal;
         }
