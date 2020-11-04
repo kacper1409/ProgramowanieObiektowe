@@ -15,11 +15,11 @@ public class RectangularMapTest {
         map.place(new Animal(map, new Vector2d(5, 3)));
         map.run(directions);
 
-        assertEquals(new Vector2d(3, 5), map.animalList.get(0).position);
-        assertEquals(new Vector2d(5, 5), map.animalList.get(1).position);
+        assertEquals(new Vector2d(3, 5), map.getAnimal(0).getPosition());
+        assertEquals(new Vector2d(5, 5), map.getAnimal(1).getPosition());
 
-        assertEquals(MapDirection.WEST, map.animalList.get(0).orientation);
-        assertEquals(MapDirection.EAST, map.animalList.get(1).orientation);
+        assertEquals(MapDirection.WEST, map.getAnimal(0).getOrientation());
+        assertEquals(MapDirection.EAST, map.getAnimal(1).getOrientation());
 
     }
 
@@ -36,13 +36,13 @@ public class RectangularMapTest {
 
         map.run(directions);
 
-        assertEquals(new Vector2d(6, 2), map.animalList.get(0).position);
-        assertEquals(new Vector2d(7, 2), map.animalList.get(1).position);
-        assertEquals(new Vector2d(8, 2), map.animalList.get(2).position);
+        assertEquals(new Vector2d(6, 2), map.getAnimal(0).getPosition());
+        assertEquals(new Vector2d(7, 2), map.getAnimal(1).getPosition());
+        assertEquals(new Vector2d(8, 2), map.getAnimal(2).getPosition());
 
-        assertEquals(MapDirection.EAST, map.animalList.get(0).orientation);
-        assertEquals(MapDirection.EAST, map.animalList.get(1).orientation);
-        assertEquals(MapDirection.WEST, map.animalList.get(2).orientation);
+        assertEquals(MapDirection.EAST, map.getAnimal(0).getOrientation());
+        assertEquals(MapDirection.EAST, map.getAnimal(1).getOrientation());
+        assertEquals(MapDirection.WEST, map.getAnimal(2).getOrientation());
 
 
     }

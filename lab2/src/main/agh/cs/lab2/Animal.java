@@ -4,15 +4,11 @@ import java.util.Vector;
 
 public class Animal {
 
-    public IWorldMap map;
-    public Vector2d initialPosition;
-    public MapDirection orientation;
-    public Vector2d position;
+    private IWorldMap map; // private
+    private Vector2d initialPosition;
+    private MapDirection orientation;
+    private Vector2d position;
 
-    static final int MIN_X = 0;
-    static final int MAX_X = 4;
-    static final int MIN_Y = 0;
-    static final int MAX_Y = 4;
 
     public Animal (IWorldMap map) {
         this.map = map;
@@ -28,8 +24,9 @@ public class Animal {
         this.position = initialPosition;
     }
 
+    public MapDirection getOrientation() { return orientation; }
 
-
+    public Vector2d getPosition() { return position; }
 
     public String toString() {
         //return "orient: " + orientation + ", pos: x: " + position.x + ", y: " + position.y;
@@ -42,17 +39,17 @@ public class Animal {
         return null;
     }
 
-    boolean inField(Vector2d currentPosition) {     // map from (0, 0) to (4, 4)
-
-        Vector2d upperRightCorner = new Vector2d(MAX_X, MAX_Y);
-        Vector2d lowerLeftCorner = new Vector2d(MIN_X, MIN_Y);
-
-        if (    (currentPosition.upperRight(upperRightCorner).follows(upperRightCorner) && !(currentPosition.upperRight(upperRightCorner).equals(upperRightCorner)))  ||
-                (currentPosition.lowerLeft(lowerLeftCorner).precedes(lowerLeftCorner) && !(currentPosition.lowerLeft(lowerLeftCorner).equals(lowerLeftCorner)))
-        ) return false;
-
-        return true;
-    }
+//    boolean inField(Vector2d currentPosition) {     // map from (0, 0) to (4, 4)
+//
+//        Vector2d upperRightCorner = new Vector2d(MAX_X, MAX_Y);
+//        Vector2d lowerLeftCorner = new Vector2d(MIN_X, MIN_Y);
+//
+//        if (    (currentPosition.upperRight(upperRightCorner).follows(upperRightCorner) && !(currentPosition.upperRight(upperRightCorner).equals(upperRightCorner)))  ||
+//                (currentPosition.lowerLeft(lowerLeftCorner).precedes(lowerLeftCorner) && !(currentPosition.lowerLeft(lowerLeftCorner).equals(lowerLeftCorner)))
+//        ) return false;
+//
+//        return true;
+//    }
 
     public void move(MoveDirection direction) { // ultimately implements canMoveTo method from IWorldMap interface
         if (direction == MoveDirection.RIGHT) {
@@ -72,7 +69,5 @@ public class Animal {
         }
     }
 
-    public Vector2d getPosition() {
-        return position;
-    }
+
 }

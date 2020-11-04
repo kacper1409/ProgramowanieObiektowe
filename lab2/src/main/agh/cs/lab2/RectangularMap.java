@@ -3,28 +3,26 @@ package agh.cs.lab2;
 import java.util.LinkedList;
 import java.util.List;
 
-public class RectangularMap implements IWorldMap {
+public class RectangularMap extends AbstractWorldMap {
 
-    public int width;
-    public int height;
-    public List<Animal> animalList;
+    private List<Animal> animalList; // private!
 
     public RectangularMap (int width, int height) {
-        this.width = width;
-        this.height = height;
+        this.limit = new Vector2d(width, height);
         this.animalList = new LinkedList<Animal>();
     }
 
-    public String toString() {
-        return new MapVisualizer(this).draw(new Vector2d(0, 0), new Vector2d(width, height));
+    @Override
+    public Vector2d getLimit() {
+        return limit;
     }
 
     @Override
     public boolean canMoveTo(Vector2d position) {
         if (
-            position.x <= width &&
+            position.x <= limit.x && // optionally precedes, follows
             position.x >= 0 &&
-            position.y <= width &&
+            position.y <= limit.y &&
             position.y >= 0 &&
             !isOccupied(position)
            ) { return true; }
@@ -34,7 +32,7 @@ public class RectangularMap implements IWorldMap {
 
     @Override
     public boolean place(Animal animal) {
-        if (!isOccupied(animal.position)) {
+        if (!isOccupied(animal.getPosition())) {
             animalList.add(animal);
             return true;
         }
@@ -48,18 +46,15 @@ public class RectangularMap implements IWorldMap {
     }
 
     @Override
-    public boolean isOccupied(Vector2d position) {
-        for (Animal animal : animalList) {
-            if (position.equals(animal.position)) return true;
-        }
-        return false;
-    }
-
-    @Override
     public Object objectAt(Vector2d position) {
         for (Animal animal : animalList) {
-                if (position.equals(animal.position)) return animal;
+                if (position.equals(animal.getPosition())) return animal;
         }
         return null;
+    }
+
+
+    public Animal getAnimal(int animalIndex) {
+        return animalList.get(animalIndex);
     }
 }
