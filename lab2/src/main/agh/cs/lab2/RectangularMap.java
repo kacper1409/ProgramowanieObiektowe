@@ -8,7 +8,7 @@ public class RectangularMap extends AbstractWorldMap {
     private List<Animal> animalList; // private!
 
     public RectangularMap (int width, int height) {
-        this.limit = new Vector2d(width, height);
+        this.limit = new Vector2d(width, height);   // width - 1
         this.animalList = new LinkedList<Animal>();
     }
 

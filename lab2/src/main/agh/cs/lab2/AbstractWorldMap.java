@@ -2,7 +2,7 @@ package agh.cs.lab2;
 
 abstract public class AbstractWorldMap implements IWorldMap {
 
-    protected Vector2d limit;
+    protected Vector2d limit;   // nieczytelna nazwa, czemu limit jest tylko jeden?
 
 
     /**
@@ -10,13 +10,13 @@ abstract public class AbstractWorldMap implements IWorldMap {
      * @return
      */
     public String toString() {
-        return new MapVisualizer(this).draw(new Vector2d(0, 0), getLimit());
+        return new MapVisualizer(this).draw(new Vector2d(0, 0), getLimit());    // tworzenie obiektu co wywołanie
     }
 
     abstract public Vector2d getLimit();
 
     @Override
-    abstract public boolean canMoveTo(Vector2d position);
+    abstract public boolean canMoveTo(Vector2d position);   // nie ma sensu przepisywać deklaracji z interfejsu
 
     @Override
     abstract public boolean place(Animal animal);
@@ -33,4 +33,7 @@ abstract public class AbstractWorldMap implements IWorldMap {
 
     @Override
     abstract public Object objectAt(Vector2d position);
+
+    // nie ma więcej wspólnej funkcjonalności?
+
 }

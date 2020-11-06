@@ -1,8 +1,10 @@
+// pakiet
+
 import agh.cs.lab2.*;
 import org.junit.Test;
 import static org.junit.Assert.*;
 
-public class GrassFieldTest {
+public class GrassFieldTest {   // ubogie testy; można by sprawdzić, czy zwierzęta się prawidłowo przemieszczają po mapie
     /**
      * checks if grass is located specified range
      */

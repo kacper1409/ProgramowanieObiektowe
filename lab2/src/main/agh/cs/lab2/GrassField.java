@@ -20,7 +20,7 @@ public class GrassField extends AbstractWorldMap {
     /**
      *
      */
-    public void placeGrass() {
+    public void placeGrass() {  // to nie powinno być publiczne
         Random grassGenerator = new Random();
         int grassRange = (int)Math.sqrt(grassPoints * 10);          // lower limit is (0, 0) which is default lower limit
         int grassCounter = 0;                                       // of nextInt(int n) (range: 0 - n)
@@ -38,7 +38,7 @@ public class GrassField extends AbstractWorldMap {
         return grassPointsArray.get(grassIndex);
     }
 
-    public Animal getAnimal(int animalIndex) {
+    public Animal getAnimal(int animalIndex) {  // nie polecam takiej metody; jaki jest jej cel?
         return animalList.get(animalIndex);
     }
 
@@ -57,7 +57,7 @@ public class GrassField extends AbstractWorldMap {
 
     public void limitSet() {
 
-        int limitX = 0;
+        int limitX = 0; // odradzam operowanie na x i y osobno; po to mamy wektor, żeby go traktować jako całość; jest to mniej wydajne, ale bardziej zarządzalne
         int limitY = 0;
 
         for (Animal animal : animalList) {
