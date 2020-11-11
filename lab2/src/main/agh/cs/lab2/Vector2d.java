@@ -9,6 +9,14 @@ public class Vector2d {
         this.y = y;
     }
 
+    @Override
+    public int hashCode() {
+        int hash = 13;
+        hash += this.x * 31;
+        hash += this.y * 17;
+        return hash;
+    }
+
     public String toString() {
         return "(" + x + ", " + y + ")";
     }

@@ -39,6 +39,10 @@ public class Animal {
         return null;
     }
 
+    public String positionToString() {
+        return "x: " + position.x + "; y: " + position.y;
+    }
+
 //    boolean inField(Vector2d currentPosition) {     // map from (0, 0) to (4, 4)
 //
 //        Vector2d upperRightCorner = new Vector2d(MAX_X, MAX_Y);

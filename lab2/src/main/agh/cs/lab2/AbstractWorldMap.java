@@ -33,4 +33,5 @@ abstract public class AbstractWorldMap implements IWorldMap {
 
     @Override
     abstract public Object objectAt(Vector2d position);
+
 }

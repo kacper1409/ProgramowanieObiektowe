@@ -9,6 +9,16 @@ public class OptionsParser {
         List<MoveDirection> result = new LinkedList<>();
 
         for (String element : array) {
+            if (!element.equals("f") && !element.equals("forward") &&
+                !element.equals("b") && !element.equals("backward") &&
+                !element.equals("l") && !element.equals("left") &&
+                !element.equals("r") && !element.equals("right")) {
+
+                throw new IllegalArgumentException(element + " is not legal move specification");
+            }
+        }
+
+        for (String element : array) {
             if (element.equals("f") || element.equals("forward"))
                 result.add(MoveDirection.FORWARD);
 
