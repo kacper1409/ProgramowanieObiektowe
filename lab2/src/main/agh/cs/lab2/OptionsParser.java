@@ -8,7 +8,7 @@ public class OptionsParser {
     public MoveDirection[] parse(String[] array) {
         List<MoveDirection> result = new LinkedList<>();
 
-        for (String element : array) {
+        for (String element : array) {  // czy ta wstępna iteracja jest potrzebna, skoro rzuca Pan wyjątek?
             if (!element.equals("f") && !element.equals("forward") &&
                 !element.equals("b") && !element.equals("backward") &&
                 !element.equals("l") && !element.equals("left") &&

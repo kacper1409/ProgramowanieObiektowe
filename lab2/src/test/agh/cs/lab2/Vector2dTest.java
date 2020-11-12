@@ -3,7 +3,7 @@ package agh.cs.lab2;
 import org.junit.Test;
 
 import static org.junit.Assert.*;
-
+// co się stało tym testom?
 public class Vector2dTest {
 //    @Test
 //    public void equalsTest() {
