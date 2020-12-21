@@ -14,8 +14,10 @@ import java.util.List;
 
 import static javax.swing.JOptionPane.showMessageDialog;
 
-public class StatDialog extends JDialog {
-    public StatDialog(Frame parent, List<DayStat> dayStats) {
+public class StatDialog extends JDialog
+{
+    public StatDialog(Frame parent, List<DayStat> dayStats)
+    {
         super(parent);
 
         setTitle("Statystyki");
@@ -43,13 +45,15 @@ public class StatDialog extends JDialog {
         okButton.addActionListener(event -> dispose());
 
         var fileButton = new JButton("Do pliku TXT");
-        fileButton.addActionListener(new ActionListener() {
+        fileButton.addActionListener(new ActionListener()
+        {
             @Override
-            public void actionPerformed(ActionEvent e) {
+            public void actionPerformed(ActionEvent e)
+            {
                 JFileChooser fileChooser = new JFileChooser();
-                FileFilter filter = new FileNameExtensionFilter("TXT", "txt");
+                FileFilter filter = new FileNameExtensionFilter("TXT","txt");
                 fileChooser.setFileFilter(filter);
-                fileChooser.showDialog(StatDialog.this, "Wybierz nazwę pliku do zapisu");
+                fileChooser.showDialog(StatDialog.this,"Wybierz nazwę pliku do zapisu");
                 File workingDirectory = new File(System.getProperty("user.dir"));
                 fileChooser.setCurrentDirectory(workingDirectory);
                 fileChooser.setVisible(true);
@@ -58,11 +62,13 @@ public class StatDialog extends JDialog {
                 String fileName = file.getPath();
 
                 BufferedWriter writer = null;
-                try {
+                try
+                {
                     writer = new BufferedWriter(new FileWriter(fileName));
                     writer.write(textArea.getText());
                     writer.close();
-                } catch (IOException ex) {
+                } catch (IOException ex)
+                {
                     showMessageDialog(StatDialog.this, "Problem z zapisem pliku:\n" + ex.getMessage());
                 }
             }
@@ -86,9 +92,18 @@ public class StatDialog extends JDialog {
         setLocationRelativeTo(parent);
     }
 
-    private void createContent(JTextArea textArea, List<DayStat> dayStats) {
-        for (DayStat dayStat : dayStats) {
-            textArea.append(dayStat.toStringFormatted());
+    private void createContent(JTextArea textArea, List<DayStat> dayStats)
+    {
+        DayStat dayStatMeanOverPeriod = DayStat.computeMeansOverPeriod(dayStats);
+        textArea.append("     *** Statystyki uśrednione po dniach ***\n\n");
+        textArea.append(dayStatMeanOverPeriod.toStringFormatted(true));
+
+        textArea.append("\n\n");
+
+        textArea.append("     *** Statystyki szczegółowe wg dni, do bieżącego dnia ***\n\n");
+        for (DayStat dayStat : dayStats)
+        {
+            textArea.append(dayStat.toStringFormatted(false));
             textArea.append("\n");
         }
     }
