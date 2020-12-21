@@ -1,0 +1,63 @@
+Dzień:    8    obiekty na mapie - zwierzęta:  763    rośliny:   10
+Dominujące genomy i krotnośći:
+  00001112223333334444555566667777 : 3
+  00001111112222333444445555677777 : 3
+  00000001123334444445556666667777 : 3
+Średnia energia zw. żywych: 124,38   średnia dł. życia zw. martwych:?   średnia liczba dzieci zw. żywych: 0,69
+
+Dzień:    7    obiekty na mapie - zwierzęta:  729    rośliny:   11
+Dominujące genomy i krotnośći:
+  00001112223333334444555566667777 : 3
+  00001111112222333444445555677777 : 3
+  00000001123334444445556666667777 : 3
+Średnia energia zw. żywych: 131,14   średnia dł. życia zw. martwych:?   średnia liczba dzieci zw. żywych: 0,63
+
+Dzień:    6    obiekty na mapie - zwierzęta:  706    rośliny:   10
+Dominujące genomy i krotnośći:
+  00001112223333334444555566667777 : 3
+  00001111112222333444445555677777 : 3
+  00000001123334444445556666667777 : 3
+Średnia energia zw. żywych: 136,42   średnia dł. życia zw. martwych:?   średnia liczba dzieci zw. żywych: 0,58
+
+Dzień:    5    obiekty na mapie - zwierzęta:  680    rośliny:   10
+Dominujące genomy i krotnośći:
+  00001112223333334444555566667777 : 3
+  00001111112222333444445555677777 : 3
+  00000001123334444445556666667777 : 3
+Średnia energia zw. żywych: 142,62   średnia dł. życia zw. martwych:?   średnia liczba dzieci zw. żywych: 0,53
+
+Dzień:    4    obiekty na mapie - zwierzęta:  639    rośliny:    8
+Dominujące genomy i krotnośći:
+  00001112223333334444555566667777 : 3
+  00000001123334444445556666667777 : 3
+Średnia energia zw. żywych: 152,83   średnia dł. życia zw. martwych:?   średnia liczba dzieci zw. żywych: 0,44
+
+Dzień:    3    obiekty na mapie - zwierzęta:  599    rośliny:    6
+Dominujące genomy i krotnośći:
+  00001112223333334444555566667777 : 3
+Średnia energia zw. żywych: 164,10   średnia dł. życia zw. martwych:?   średnia liczba dzieci zw. żywych: 0,33
+
+Dzień:    2    obiekty na mapie - zwierzęta:  570    rośliny:    4
+Dominujące genomy i krotnośći:
+  00001112223333334444555566667777 : 3
+Średnia energia zw. żywych: 173,50   średnia dł. życia zw. martwych:?   średnia liczba dzieci zw. żywych: 0,25
+
+Dzień:    1    obiekty na mapie - zwierzęta:  533    rośliny:    2
+Dominujące genomy i krotnośći:
+  00001112223333334444555566667777 : 2
+  00000112223333344555555566667777 : 2
+  00001112222333444445556666677777 : 2
+  00011111122333344445555667777777 : 2
+  00001111222333444555556667777777 : 2
+  00001111222233344444455566666667 : 2
+  00000001122233333344555566667777 : 2
+  00011111112222333344445566667777 : 2
+Średnia energia zw. żywych: 186,62   średnia dł. życia zw. martwych:?   średnia liczba dzieci zw. żywych: 0,12
+
+Dzień:    0    obiekty na mapie - zwierzęta:  500    rośliny:    0
+Dominujące genomy i krotnośći:
+  00001112223333334444555566667777 : 2
+  00001112222333444445556666677777 : 2
+Średnia energia zw. żywych: 200,00   średnia dł. życia zw. martwych:?   średnia liczba dzieci zw. żywych: 0,00
+
+

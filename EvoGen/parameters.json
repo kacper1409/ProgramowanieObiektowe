@@ -1,0 +1,11 @@
+{
+	"width" : 100,
+	"height" : 30,
+    "numAnimals": 500,
+    "startEnergy": 200.0,
+    "moveEnergy": 1.0,
+    "plantEnergy": 20.0,
+    "jungleRatio": 0.2,
+    "engineSpeedPerSec": 5,
+    "autoStart": 1
+}
