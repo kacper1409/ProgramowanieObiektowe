@@ -10,7 +10,7 @@ public class Vector2d {
         return x;
     }
 
-    public void setX(int x) {
+    public void setX(int x) {   // czy ta metoda jest bezpieczna?
         this.x = x;
     }
 
@@ -80,7 +80,7 @@ public class Vector2d {
         return new Vector2d(-this.x, -this.y);
     }
 
-    public Vector2d getUnitMotion(int direction) {
+    public Vector2d getUnitMotion(int direction) {  // kierunek jako int? Czy to na pewno jest właściwa klasa dla tej metody?
         switch (direction) {
             case 0:
                 return new Vector2d(0, 1);

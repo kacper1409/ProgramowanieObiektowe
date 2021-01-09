@@ -24,7 +24,7 @@ public class Main {
 
         try {
             parameters = Parameters.read(args[0]);
-        } catch (Exception ex) {
+        } catch (Exception ex) {    // wszystkie wyjątki do jednego worka
             System.out.println("Błąd odczytu pliku z konfiguracją: " + ex.getMessage());
             return;
         }

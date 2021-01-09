@@ -28,7 +28,7 @@ public class Parameters {
         this.width = width;
     }
 
-    private int height = 100;
+    private int height = 100;   // nie lepiej zgrupować wszystkie pola na górze?
 
     public int getHeight() {
         return height;

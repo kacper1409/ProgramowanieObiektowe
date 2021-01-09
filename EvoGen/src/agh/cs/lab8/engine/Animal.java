@@ -9,7 +9,7 @@ public class Animal {
 
     private Vector2d position;
     public Vector2d getPosition() { return position; }
-    public void setPosition(Vector2d position) { this.position = position; }
+    public void setPosition(Vector2d position) { this.position = position; }    // teleport
 
     private double energy;
     public double getEnergy() { return energy; }
@@ -25,7 +25,7 @@ public class Animal {
 
     private Animal parentA;
     public Animal getParentA() { return parentA; }
-    public void setParentA(Animal parentA) { this.parentA = parentA; }
+    public void setParentA(Animal parentA) { this.parentA = parentA; }  // czy rodzica można ustawić w dowolnym momencie?
 
     private Animal parentB;
     public Animal getParentB() { return parentB; }

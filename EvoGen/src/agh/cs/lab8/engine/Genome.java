@@ -18,7 +18,7 @@ public class Genome {
         this.genomeSequence = new int[GENOME_SIZE];
 
         this.random = new Random();
-    }
+    }   // konstruktor zostawia genom w nieprawidłowym stanie
 
     @Override
     public String toString() {
@@ -29,7 +29,7 @@ public class Genome {
     }
 
     public void initGenome() {
-        int upperBound = NUMBER_OF_GENES;
+        int upperBound = NUMBER_OF_GENES;   // co wnosi ta zmienna?
 
         for (int i = 0; i < NUMBER_OF_GENES; i++) {   // zapewnienie co najmniej jednego genu kazdego rodzaju (zakres [0, 7])
             genomeSequence[i] = i;
@@ -101,7 +101,7 @@ public class Genome {
 
         while (isComplete == false) {
             isComplete = true;
-            for (int gene : genes) gene = 0;
+            for (int gene : genes) gene = 0;    // co ma osiągnąć ta pętla?
             for (int gene : genomeSequence) genes[gene] += 1;
             for (int i = 0; i < NUMBER_OF_GENES; i++) {
                 if (genes[i] == 0) {

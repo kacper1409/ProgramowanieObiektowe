@@ -59,7 +59,7 @@ public class Engine {
     public void setAnimals(List<Animal> animals) { this.animals = animals; }
 
     private List<Plant> plants;                             // lista roślin pozostających na mapie (niezjedzonych)
-    public List<Plant> getPlants() { return plants; }
+    public List<Plant> getPlants() { return plants; }   // zniszczona hermetyzacja
     public void setPlants(List<Plant> plants) { this.plants = plants; }
 
     private List<DayStat> dayStats;                         // lista dziennych statystyk
@@ -221,7 +221,7 @@ public class Engine {
     private void reproduceAnimals() {
 
         List<Animal> children = new ArrayList<>();
-        List<Vector2d> dirtySpots = new ArrayList<>();
+        List<Vector2d> dirtySpots = new ArrayList<>();  // nieczytelna nazwa
 
         for (Animal animal : animals) {
             List<Animal> list = animalsAtCell(animal.getPosition());
@@ -289,7 +289,7 @@ public class Engine {
     }
 
     private List<Animal> animalsAtCell(Vector2d position) {
-        List<Animal> list = new ArrayList<Animal>();
+        List<Animal> list = new ArrayList<Animal>();    // może warto trzymać zwierzęta w HashMapie?
         for (Animal animal : animals)
             if (animal.getPosition().equals(position)) {
                 list.add(animal);
@@ -325,12 +325,12 @@ public class Engine {
     }
 
     private List<Animal> findParents(List<Animal> list) {
-        List<Animal> mixedSet = new ArrayList<>();
+        List<Animal> mixedSet = new ArrayList<>();  // myląca nazwa dla listy
         List<Animal> result = new ArrayList<>();
-        while (list.size() != 0) {
+        while (list.size() != 0) {  // Random.shuffle
             int randomIndex = random.nextInt(list.size());
             mixedSet.add(list.get(randomIndex));
-            list.remove(randomIndex);
+            list.remove(randomIndex);   // czy opróżnienie tej listy jest bezpieczne?
         }
         for (int i = 0; i < Genome.NUMBER_OF_PARENTS; i++) {
             int index = getStrongestAnimalIndex(mixedSet);
@@ -443,4 +443,4 @@ public class Engine {
 
         return dominatedMap;
     }
-}
+}   // ta klasa ma chyba za dużo pracy
